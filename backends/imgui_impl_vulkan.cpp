@@ -1740,6 +1740,8 @@ void ImGui_ImplVulkanH_CreateWindowSwapChain(VkPhysicalDevice physical_device, V
             info.compositeAlpha = VK_COMPOSITE_ALPHA_INHERIT_BIT_KHR;
         else
             IM_ASSERT(false && "No supported composite alpha mode found!");
+        // TODO: added
+        info.compositeAlpha = VK_COMPOSITE_ALPHA_POST_MULTIPLIED_BIT_KHR;
         info.presentMode = wd->PresentMode;
         info.clipped = VK_TRUE;
         info.oldSwapchain = old_swapchain;
